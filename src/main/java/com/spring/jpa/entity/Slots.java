@@ -3,6 +3,7 @@ package com.spring.jpa.entity;
 import java.time.LocalDate;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,7 +27,7 @@ public class Slots {
 	@Column(name = "time")
 	private String time;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Course course;
 
 	public Slots() {
