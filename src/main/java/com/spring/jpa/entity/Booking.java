@@ -1,5 +1,7 @@
 package com.spring.jpa.entity;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,18 +27,21 @@ public class Booking {
 	
 	@OneToOne
 	private Slots slots;
+	
+	private LocalDate enroll_date;
 
 	public Booking() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Booking(long id, User user, Course course, Slots slots) {
+	public Booking(long id, User user, Course course, Slots slots, LocalDate enroll_date) {
 		super();
 		this.id = id;
 		this.user = user;
 		this.course = course;
 		this.slots = slots;
+		this.enroll_date = enroll_date;
 	}
 
 	public long getId() {
@@ -71,11 +76,20 @@ public class Booking {
 		this.slots = slots;
 	}
 
+	public LocalDate getEnroll_date() {
+		return enroll_date;
+	}
+
+	public void setEnroll_date(LocalDate enroll_date) {
+		this.enroll_date = enroll_date;
+	}
+
 	@Override
 	public String toString() {
-		return "Booking [id=" + id + ", user=" + user + ", course=" + course + ", slots=" + slots + "]";
+		return "Booking [id=" + id + ", user=" + user + ", course=" + course + ", slots=" + slots + ", enroll_date="
+				+ enroll_date + "]";
 	}
-	
+
 	
 	
 }

@@ -25,25 +25,28 @@ public class User {
 	@Column(name = "contact")
 	private String contact;
 	
-	@Column(name = "email")
-	private String email;
+	private String emailId;
+	
+	private String userType;
 	
 	@Column(name = "password")
-	private String Password;
+	private String password;
 
-	public User(long id, String firstName, String lastName, String contact, String email, String password) {
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public User(long id, String firstName, String lastName, String contact, String emailId, String userType,
+			String password) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.contact = contact;
-		this.email = email;
-		Password = password;
-	}
-
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
+		this.emailId = emailId;
+		this.userType = userType;
+		this.password = password;
 	}
 
 	public long getId() {
@@ -78,27 +81,36 @@ public class User {
 		this.contact = contact;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getEmailId() {
+		return emailId;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+	public String getUserType() {
+		return userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
 	}
 
 	public String getPassword() {
-		return Password;
+		return password;
 	}
 
 	public void setPassword(String password) {
-		Password = password;
+		this.password = password;
 	}
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", contact=" + contact
-				+ ", email=" + email + ", Password=" + Password + "]";
+				+ ", emailId=" + emailId + ", userType=" + userType + ", password=" + password + "]";
 	}
+
 	
 	
 }
